@@ -85,8 +85,9 @@ def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=Fa
     if   "7" in spacecraft: ESun=(1969.0,1840.0,1551.0,1044.0,255.700,0.,82.07,1368.00)
     elif "5" in spacecraft: ESun=(1957.0,1826.0,1554.0,1036.0,215.0  ,0.,80.67)
     elif "4" in spacecraft: ESun=(1957.0,1825.0,1557.0,1033.0,214.9  ,0.,80.72)
+    elif "8" in spacecraft: ESun=(1857.0,1996.0,1812.0,1516.0,983.3,251.8,85.24,0.0,389.3)
     else:
-        arcpy.AddError("This tool only works for Landsat 4, 5, or 7")
+        arcpy.AddError("This tool only works for Landsat 4, 5, 7 or 8 (non-thermal)")
         raise arcpy.ExecuteError()
 
     #determing if year is leap year and setting the Days in year accordingly
@@ -135,7 +136,7 @@ def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=Fa
 
         elif OutputType=="Reflectance/Temperature":
             #Calculating temperature for band 6 if present
-            if "6" in BandNum:
+            if "6" in BandNum and "8" not in spacecraft:
                 Refraster=1282.71/(arcpy.sa.Ln((666.09/Radraster)+1.0))
                 BandPath="{0}\\{1}_B{2}_Temperature.tif".format(OutputFolder,TileName,BandNum)
             #Otherwise calculate reflectance

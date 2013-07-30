@@ -18,3 +18,9 @@ To begin, install the following requirements:
 *note*: ArcGIS 10 uses Python 2.6 and ArcGIS 10.1 uses Python 2.7 . So choose your installer accordingly.
 
 To use the toolboxes, download the files as a zipped folder. Unzip and navigate to the folder in ArcCatalog. The toolbox should appear and instructions for each tool will be available in the tool's help section.
+
+Notes
+-------------
+Sometimes you will need to manually set the source script for each tool. This can be accomplished in the "Source" tab of the tool's "Properties"
+
+Spaces in pathnames can cause problems for all of these tools. Make sure all filenames and containing folders do not contain spaces.
