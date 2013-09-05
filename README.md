@@ -10,8 +10,8 @@ Installation and Setup
 
 To begin, install the following requirements:
 
- * [NumPy](http://numpy.scipy.org/)
- * [SciPy](http://www.scipy.org/)
+ * [NumPy](http://sourceforge.net/projects/numpy/files/NumPy/)
+ * [SciPy](http://sourceforge.net/projects/scipy/files/scipy/)
  * [HDF5](http://www.hdfgroup.org/HDF5/release/obtain5.html)
  * [H5py](http://code.google.com/p/h5py/)
 

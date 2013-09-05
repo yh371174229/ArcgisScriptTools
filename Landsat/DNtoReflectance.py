@@ -10,7 +10,7 @@
 import arcpy
 import math
 
-##L7Reflectance C:\Users\qgeddes\Downloads\Landsat\tooltest\LE71720832011270ASN00_B1.TIF C:\Users\qgeddes\Downloads\Landsat\tooltest\LE71720832011270ASN00_MTL.txt Reflectance/Temperature C:\Users\qgeddes\Downloads\Landsat\tooltest\Refl
+
 
 arcpy.CheckOutExtension("Spatial")
 def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=False,OutputFolder=""):
@@ -82,12 +82,17 @@ def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=Fa
     #the spacecraft from which the imagery was capture is identified
     #this info determines the solar exoatmospheric irradiance (ESun) for each band
     spacecraft=MText.split('SPACECRAFT_ID = "')[1].split('"')[0]
-    if   "7" in spacecraft: ESun=(1969.0,1840.0,1551.0,1044.0,255.700,0.,82.07,1368.00)
-    elif "5" in spacecraft: ESun=(1957.0,1826.0,1554.0,1036.0,215.0  ,0.,80.67)
-    elif "4" in spacecraft: ESun=(1957.0,1825.0,1557.0,1033.0,214.9  ,0.,80.72)
-    elif "8" in spacecraft: ESun=(1857.0,1996.0,1812.0,1516.0,983.3,251.8,85.24,0.0,389.3)
+    ThermBands=["6"]
+    if   "7" in spacecraft:
+        ESun=(1969.0,1840.0,1551.0,1044.0,255.700,0.   ,82.07,1368.00)
+        ThermBands=["B6_VCID_1","B6_VCID_2"]
+    elif "5" in spacecraft: ESun=(1957.0,1826.0,1554.0,1036.0,215.0  ,0.   ,80.67)
+    elif "4" in spacecraft: ESun=(1957.0,1825.0,1557.0,1033.0,214.9  ,0.   ,80.72)
+    elif "8" in spacecraft:
+        ESun=(1857.0,1996.0,1812.0,1516.0,983.3  ,251.8,85.24,0.0,389.3,0.,0.)
+        ThermBands=["10","11"]
     else:
-        arcpy.AddError("This tool only works for Landsat 4, 5, 7 or 8 (non-thermal)")
+        arcpy.AddError("This tool only works for Landsat 4, 5, 7 or 8 ")
         raise arcpy.ExecuteError()
 
     #determing if year is leap year and setting the Days in year accordingly
@@ -105,7 +110,11 @@ def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=Fa
 
     #Calculating values for each band
     for pathname in Lbands:
-        try:BandNum=pathname.split("\\")[-1].split("B")[1][0]
+        try:
+            BandNum=pathname.split("\\")[-1].split("B")[1][0:2]
+            try: int(BandNum)
+            except: BandNum=pathname.split("\\")[-1].split("B")[1][0]
+
         except:
             msg="Error reading Band {0}. Bands must have original names as downloaded.".format(str(inputbandnum))
             arcpy.AddError(msg)
@@ -136,7 +145,7 @@ def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=Fa
 
         elif OutputType=="Reflectance/Temperature":
             #Calculating temperature for band 6 if present
-            if "6" in BandNum and "8" not in spacecraft:
+            if BandNum in ThermBands:
                 Refraster=1282.71/(arcpy.sa.Ln((666.09/Radraster)+1.0))
                 BandPath="{0}\\{1}_B{2}_Temperature.tif".format(OutputFolder,TileName,BandNum)
             #Otherwise calculate reflectance
