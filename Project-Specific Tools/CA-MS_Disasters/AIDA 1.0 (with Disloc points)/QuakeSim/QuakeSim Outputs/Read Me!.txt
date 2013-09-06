@@ -1,0 +1,11 @@
+Fault - Positive Slip Value (meters) - Magnitude
+
+Calaveras - 0.15 -  6.5
+Concord-Green Valley - 0.007 -5.4
+Greenville - 0.02 - 5.8
+Hayward - 2 - 7.2
+Loma Prieta - 2 - 7.0
+New Madrid South - 1 m on southern arm - 7.1
+Pittsburgh-Kirby Hills - 0.1 - 6.0
+San Andreas - 5 -7.9
+San Andreas Small - 0.0002 - 5.0

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20130708</CreaDate><CreaTime>16000900</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\desktop10.1\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyFeatures" Date="20130708" Time="160009">CopyFeatures "SanAndreas1906_5m.csv Events" "C:\Users\karenan\Desktop\QuakeSim Outputs\SanAndreas1906\SanAndreas1906\SanAndreas1906_5m_csv Events.shp" # 0 0 0</Process></lineage></DataProperties></Esri></metadata>

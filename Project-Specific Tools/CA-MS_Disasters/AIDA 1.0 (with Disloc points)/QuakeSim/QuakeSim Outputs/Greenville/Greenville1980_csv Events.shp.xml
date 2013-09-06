@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20130718</CreaDate><CreaTime>17331500</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\desktop10.1\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyFeatures" Date="20130718" Time="173315">CopyFeatures "Greenville1980.csv Events" "C:\Users\karenan\Desktop\QuakeSim Outputs\Greenville1980\Greenville1980_csv Events.shp" # 0 0 0</Process></lineage></DataProperties></Esri></metadata>

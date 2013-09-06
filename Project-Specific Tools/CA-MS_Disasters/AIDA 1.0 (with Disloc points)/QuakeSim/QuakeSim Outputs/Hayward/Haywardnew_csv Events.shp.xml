@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20130723</CreaDate><CreaTime>11083200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\desktop10.1\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyFeatures" Date="20130723" Time="110832">CopyFeatures "Haywardnew.csv Events" "C:\Users\karenan\Desktop\QuakeSim Outputs\Hayward1968_new\Haywardnew_csv Events.shp" # 0 0 0</Process></lineage></DataProperties></Esri></metadata>
