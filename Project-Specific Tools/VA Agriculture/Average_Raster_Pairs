@@ -1,0 +1,29 @@
+#-------------------------------------------------------------------------------
+# Name:        AveragePairs
+# Purpose:
+#
+# Author:      Sarah Trimble
+#
+# Created:     20/06/2013
+# Copyright:   (c) strimble 2013
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
+import os, arcpy, sys
+from arcpy import env, sa
+from arcpy.sa import *
+arcpy.env.workspace = "C:\Users\strimble\Documents\Raster\Daily\DIntMea\DIntMea_Avg"
+
+rasters = arcpy.ListRasters()
+i = 0
+j = 1
+m = 1
+
+while m < 366:
+    for raster in rasters:
+        inRast1 = rasters[i]
+        inRast2 = rasters[j]
+        outRast = CellStatistics([inRast1, inRast2], "MEAN")
+        i = i + 2
+        j = j + 2
+        outRast = outRast.save("C:\Users\strimble\Documents\Raster\Daily\DIntMea\DIntMea_Avg" + "\\" + "avg_" + str(m))
+        m = m + 1
