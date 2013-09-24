@@ -1,0 +1,30 @@
+#################################
+# NASA DEVELOP Program
+# Location: Jet Propulsion Laboratory, Pasadena, Ca
+# Author: Scott Barron, scottbarron13@gmail.com
+# NetCDF Converter: This tool is used to batch convert NetCDF files (which are not viewable with ArcGIS) into raster files (which are).
+#################################
+
+import os
+import arcpy
+from arcpy import env
+#The folder_path is the name and location of the folder containing the NetCDF files, and where the rasters will be created.
+folder_path= 
+arcpy.env.workspace= folder_path
+
+#This is the variable to display from the NetCDF file. To assign the default value, leave as NetCDF_Var= "".
+NetCDF_Var= ""
+#This is the x coordinate, or longitude, from the NetCDF file. To assign the default value, leave as NetCDF_X= "".
+NetCDF_X= ""
+#This is the y coordinate, or latitude, from the NetCDF file. To assign the default value, leave as NetCDF_Y= "".
+NetCDF_Y= ""
+
+#This for loop will search through the folder designated by folder_path and if a file ends in ".nc", then this script will convert it to a raster.
+for NetCDFs in os.listdir(folder_path):
+    if NetCDFs[-3:]== ".nc":
+        NetCDF_Name= NetCDFs[5:13]
+        print NetCDF_Name
+        arcpy.MakeNetCDFRasterLayer_md(NetCDFs,NetCDF_Var,NetCDF_X,NetCDF_Y,NetCDF_Name)
+        Raster_Name= "x" + str(NetCDF_Name)
+        print Raster_Name
+        arcpy.CopyRaster_management(NetCDF_Name,Raster_Name)
