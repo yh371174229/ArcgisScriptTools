@@ -77,12 +77,6 @@ for files in os.listdir(folder_path):
         #We reset the variables to zero for each different flight date.
         var1=0
         searchfile.close()
-        
-print Lines_list
-print Samples_list
-print Latitude_list
-print Longitude_list
-print Files_list
 
 var6=0                          
 #Step 3: Open HDR file and replace data.
