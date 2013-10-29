@@ -1,10 +1,8 @@
 ###################
-#
-# UAVSAR HDR Creation Script.
-# The purpose of this tool is to easily and quickly generate UAVSAR HDR files.
-# Author: Scott Barron, Geoscience Programmer YP, Jet Propulsion Laboratory.
-# Email: Scottbarron13@gmail.com.
-#
+# NASA DEVELOP Program.
+# Location: Jet Propulsion Laboratory.
+# Purpose: To easily and quickly generate UAVSAR HDR files.
+# Author: Scott Barron, Scottbarron13@gmail.com.
 ###################
 
 
