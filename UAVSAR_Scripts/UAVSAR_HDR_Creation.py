@@ -1,8 +1,10 @@
 ###################
-# NASA DEVELOP Program
-# Location: Jet Propulsion Laboratory
-# Purpose: To easily and quickly generate UAVSAR HDR files.
-# Author: Scott Barron, Scottbarron13@gmail.com.
+#
+# UAVSAR HDR Creation Script.
+# The purpose of this tool is to easily and quickly generate UAVSAR HDR files.
+# Author: Scott Barron, Geoscience Programmer YP, Jet Propulsion Laboratory.
+# Email: Scottbarron13@gmail.com.
+#
 ###################
 
 
@@ -62,24 +64,37 @@ for files in os.listdir(folder_path):
                 if Samples not in Samples_list:
                     Samples_list.append(Samples)
                     
-            elif "Center Latitude of Upper Left Pixel of Image" in line:
+            elif "Latitude of Upper Left Corner of Image" in line:
                 Latitude= line[55:67]
+                print Latitude
                 if Latitude not in Latitude_list:
                     Latitude_list.append(Latitude)
-                    
-            elif "Center Longitude of Upper Left Pixel of Image" in line:
-                Longitude= line[55:67]
+
+            elif "Latitude of Upper Left Pixel of Image" in line:
+                Latitude= line[55:67]
+                print Latitude
+                if Latitude not in Latitude_list:
+                    Latitude_list.append(Latitude)
+
+            elif "Longitude of Upper Left Corner of Image" in line:
+                Longitude= line[55:69]
+                print Longitude
                 if Longitude not in Longitude_list:
                     Longitude_list.append(Longitude)
-                    
+
+            elif "Longitude of Upper Left Pixel of Image" in line:
+                Longitude= line[55:67]
+                print Longitude
+                if Longitude not in Longitude_list:
+                    Longitude_list.append(Longitude)                   
         #We reset the variables to zero for each different flight date.
         var1=0
         searchfile.close()
-        
+
 print Lines_list
 print Samples_list
 print Latitude_list
-print Longitude_list
+print Longitude_list    
 print Files_list
 
 var6=0                          
@@ -108,7 +123,7 @@ for files in os.listdir(folder_path):
                         
                 elif "map info" in line:
                     sources.write(re.sub(line[48:74], Longitude_list[Files_list.index(files[0:18])] + ", " + Latitude_list[0], line))
-                            
+                         
                 else:
                     sources.write(re.sub(line, line, line))
 
