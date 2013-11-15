@@ -1,0 +1,34 @@
+% Authors: Dr. Kenton Ross, David Arabyan
+% Virginia Agriculture, Fall 2013
+% This MATLAB code along with tiffSingleWrite averages 
+% 365 day tiffs into 37 Decads (last decad is only 5 days long)
+
+function [ ] = Decader( )
+
+dir = 'C:\Users\darabyan\Desktop\AllExtractModisTiffs\';
+decadlen = 10;
+
+for jj = 1:37
+    if jj == 37
+        decadlen = 5;
+    end
+    
+    decad = single(NaN(278,803,decadlen));
+    
+    for zz = 1:decadlen
+        number = 10 * (jj - 1) + zz;
+        filename = strcat(dir,'Amodisdoy',num2str(number),'.tif');
+        decad(:,:,zz) = imread(filename);
+        decad(decad<-10) = NaN;
+    end
+    
+    DecadMean = nanmean(decad,3);
+    file = strcat('C:\Users\darabyan\Desktop\MODISHighTiffs\modisdecad',num2str(jj),'.tif');
+    tiffSingleWrite(DecadMean,file);
+    clear decad DecadMean;
+    
+end
+
+disp('Done with Decader');
+
+end
