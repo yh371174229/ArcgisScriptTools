@@ -1,0 +1,15 @@
+% Authors: Dr. Kenton Ross, David Arabyan
+% Virginia Agriculture, Fall 2013, LaRC
+% This MATLAB code reads in tiffs as a 3D tiffstack
+
+function [ rasters ] = readin( )
+
+dir = 'C:\Users\darabyan\Desktop\MODISDOYHigh\';
+
+    for ii = 1:365
+        imfile = sprintf('modisdoy%d.tif',ii);
+        filestr = [dir imfile];
+        temp=imread(filestr);
+        rasters(:,:,ii) = temp;
+    end
+end
