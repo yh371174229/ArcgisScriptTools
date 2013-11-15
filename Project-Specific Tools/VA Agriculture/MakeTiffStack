@@ -1,5 +1,5 @@
 % Authors: Dr. Kenton Ross, David Arabyan
-% Virginia Agriculture, Fall 2013
+% Virginia Agriculture, Fall 2013, LaRC
 % This MATLAB Script takes in .tif files 
 % and creates a 3D tiff stack.
 
