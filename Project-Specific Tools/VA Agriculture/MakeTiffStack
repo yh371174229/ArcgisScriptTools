@@ -1,0 +1,17 @@
+% Authors: Dr. Kenton Ross, David Arabyan
+% Virginia Agriculture, Fall 2013
+% This MATLAB Script takes in .tif files 
+% and creates a 3D tiff stack.
+
+function [ f ] = makeff( )
+
+    for ii = 1:37
+        imfile = sprintf('modisdecad%d.tif',ii);
+        filestr = ['C:\Users\darabyan\Desktop\MODISHighTiffs\' imfile];
+        temp=imread(filestr);
+        %temp=double(temp);
+        temp(temp<0)=NaN;
+        f(:,:,ii) = temp;
+    end
+end
+
