@@ -1,0 +1,27 @@
+// Authors: Jonathan Hicks
+// Virginia Agriculture, Fall 2013
+// This is a JAVA script that attaches geospatial header data to .tif files
+// User must download the GUI at the following URL
+// http://www.geosage.com/highview/download_3.html
+// in order to extract header files from a template raster
+
+
+package coupleIt;
+import java.io.*;
+public class couplingMain {
+	public static void main(String[] args)
+	{
+		String executeCommand = "";
+		for (int i = 1; i <= 365; i++)
+		{
+			executeCommand = "C:/geo/geotifcp.exe -g C:/geo/modtemp.gtf C:/geo/data/Dstack" + Integer.toString(i) + ".tif C:/geo/new/GDStack" + Integer.toString(i) + ".tif";
+			System.out.println(executeCommand);
+			try{
+				Runtime.getRuntime().exec(executeCommand);
+			} catch (IOException e1){
+				e1.printStackTrace();
+			}
+		}
+	}
+}
+	
