@@ -1,5 +1,5 @@
 % Authors: Dr. Kenton Ross, David Arabyan
-% Virginia Agriculture, Fall 2013
+% Virginia Agriculture, Fall 2013, LaRC
 % This MATLAB code along with tiffSingleWrite averages 
 % 365 day tiffs into 37 Decads (last decad is only 5 days long)
 
