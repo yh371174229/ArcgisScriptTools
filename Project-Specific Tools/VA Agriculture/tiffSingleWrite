@@ -1,0 +1,61 @@
+% Authors: Dr. Kenton Ross, David Arabyan
+% Virginia Agriculture, Fall 2013, LaRC
+% This MATLAB code writes tiffs
+% Writing tiffs using this code rather
+% than imwrite() preserves raster values
+
+
+function [ ] = tiffSingleWrite( imgVar, tiffFile )
+info = imfinfo('C:\Users\Anelson\Desktop\modisTemplate.tif');
+ginfo = geotiffinfo('C:\Users\Anelson\Desktop\modisTemplate.tif');
+
+t0 = Tiff(tiffFile,'w');
+
+tagstruct.ImageLength = size(imgVar,1);
+tagstruct.ImageWidth = size(imgVar,2);
+tagstruct.Compression = Tiff.Compression.None;
+tagstruct.SampleFormat = Tiff.SampleFormat.IEEEFP;
+tagstruct.Photometric = Tiff.Photometric.MinIsBlack;
+tagstruct.BitsPerSample = info.BitsPerSample;
+tagstruct.SamplesPerPixel = info.SamplesPerPixel;
+tagstruct.PlanarConfiguration = Tiff.PlanarConfiguration.Chunky;
+
+%-------These Tags are not recognized by Tiff.m--------%
+%tagstruct.ModelPixelScaleTag = info.ModelPixelScaleTag;
+%tagstruct.ModelTiepointTag = info.ModelTiepointTag;
+%tagstruct.GeoKeyDirectoryTag = info.GeoKeyDirectoryTag;
+%tagstruct.GeoDoubleParamsTag = info.GeoDoubleParamsTag;
+%tagstruct.GeoAsciiParamsTag = info.GeoAsciiParamsTag;
+%tagstruct.GDAL_NODATA = info.GDAL_NODATA;
+% tagstruct.ModelType = ginfo.ModelType;
+% tagstruct.PCS = ginfo.PCS;
+% tagstruct.Projection = ginfo.Projection;
+% tagstruct.MapSys = ginfo.MapSys;
+% tagstruct.Zone = ginfo.Zone;
+% tagstruct.CTProjection = ginfo.CTProjection;
+% tagstruct.ProjParm = ginfo.ProjParm;
+% tagstruct.ProjParmId = ginfo.ProjParmId;
+% tagstruct.GCS = ginfo.GCS;
+% tagstruct.Datum = ginfo.Datum;
+% tagstruct.Ellipsoid = ginfo.Ellipsoid;
+% tagstruct.SemiMajor = ginfo.SemiMajor;
+% tagstruct.SemiMinor = ginfo.SemiMinor;
+% tagstruct.PM = ginfo.PM;
+% tagstruct.PMLongToGreenwich = ginfo.PMLongToGreenwich;
+% tagstruct.UOMLength = ginfo.UOMLength;
+% tagstruct.UOMLengthInMeters = ginfo.UOMLengthInMeters;
+% tagstruct.UOMAngle = ginfo.UOMAngle;
+% tagstruct.UOMAngleInDegrees = ginfo.UOMAngleInDegrees;
+% tagstruct.TiePoints = ginfo.TiePoints;
+% tagstruct.PixelScale = ginfo.PixelScale;
+% tagstruct.RefMatrix = ginfo.RefMatrix;
+% tagstruct.BoundingBox = ginfo.BoundingBox;
+% tagstruct.CornerCoords = ginfo.CornerCoords;
+% tagstruct.GeoTIFFCodes = ginfo.GeoTIFFCodes;
+
+t0.setTag(tagstruct);
+t0.write(imgVar);
+t0.close();
+
+end
+
