@@ -25,7 +25,7 @@ Y_Value= arcpy.GetParameterAsText(3)
 Output_Location= arcpy.GetParameterAsText(4)
 
 #This for loop will search through the folder designated by folder_path and if a file ends in ".nc", then this script will convert it to a raster.
-for NetCDFs in os.listdir(folder_path):
+for NetCDFs in os.listdir(Input_folder):
     if NetCDFs[-3:]== ".nc":
         NetCDF_Name= NetCDFs[5:13]
         print NetCDF_Name
@@ -34,4 +34,4 @@ for NetCDFs in os.listdir(folder_path):
         Raster_Name= "x" + str(NetCDF_Name)
         arcpy.CopyRaster_management(NetCDF_Name,Output_Location + "/" + Raster_Name)
 
-arcpy.AddMessag("The rasters have been successfully generated.")
+arcpy.AddMessage("The rasters have been successfully generated.")
