@@ -5,7 +5,6 @@
 # Author: Scott Barron, Scottbarron13@gmail.com.
 ###################
 
-
 import os
 import re
 folder= raw_input("Hello, and welcome to the UAVSAR HDR Creation script. This python script is used to automatically generate any number of UAVSAR HDR files. Please make sure that the following are contained in one folder: The UAVSAR .grd files and the annotation files (in either .ann or .txt format). Once you have all of these files in one folder, input the folder name and path here, and then click 'ENTER': ")
