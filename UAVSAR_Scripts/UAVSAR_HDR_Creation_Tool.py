@@ -8,9 +8,8 @@
 
 import os
 import re
-folder= raw_input("Hello, and welcome to the UAVSAR HDR Creation script. This python script is used to automatically generate any number of UAVSAR HDR files. Please make sure that the following are contained in one folder: The UAVSAR .grd files and the annotation files (in either .ann or .txt format). Once you have all of these files in one folder, input the folder name and path here, and then click 'ENTER': ")
-folder_path= r"%s" %(folder)
-os.chdir(folder_path)
+folder= arcpy.GetParameterAsText(0)
+os.chdir(folder)
 
 #Empty lists to put information that will be recalled later.
 Lines_list= list()
@@ -20,7 +19,7 @@ Longitude_list= list()
 Files_list= list()
 
 #Step 1: Look through folder and determine how many different flights there are by looking at the HDR files.
-for files in os.listdir(folder_path):
+for files in os.listdir(folder):
     if files [-4:] == ".grd":
         newfile= open(files[0:-4] + ".hdr", 'w')
         newfile.write("""ENVI
@@ -47,7 +46,7 @@ wavelength units = Unknown""")
 var1=0
 
 #Step 2: Look through the folder and locate the annotation file(s). These can be in either .txt or .ann file types.
-for files in os.listdir(folder_path):
+for files in os.listdir(folder):
     if Files_list[var1] and files[-4:] == ".txt" or files[-4:] == ".ann":
         #Step 3: Once located, find the info we are interested in and append it to the appropriate list. We limit the variables to <=1 so that they only return two values (one for each polarization of 
         searchfile = open(files, "r")
@@ -97,7 +96,7 @@ print Files_list
 
 var6=0                          
 #Step 3: Open HDR file and replace data.
-for files in os.listdir(folder_path):
+for files in os.listdir(folder):
     if files[-4:] == ".hdr":
         with open(files, "r") as sources:
             lines= sources.readlines()
@@ -121,7 +120,7 @@ for files in os.listdir(folder_path):
                         
                 elif "map info" in line:
                     sources.write(re.sub(line[47:66], Longitude_list[Files_list.index(files[0:18])] + ", " + Latitude_list[0], line))
-                    
+                         
                 else:
                     sources.write(re.sub(line, line, line))
 
