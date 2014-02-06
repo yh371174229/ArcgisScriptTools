@@ -136,7 +136,7 @@ for band in bands:
     if u'GEO' in band:
         GeoBand=bands.pop(BandNum)
     BandNum+=1
-
+    
 #Designating the Latitude and Longitude arrays
 Latitude=f["/{0}/{1}/Latitude".format(hdfind1,GeoBand)]
 Longitude=f["/{0}/{1}/Longitude".format(hdfind1,GeoBand)]

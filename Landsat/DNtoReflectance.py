@@ -148,10 +148,12 @@ def DNtoReflectance(Lbands,MetaData,OutputType="Reflectance/Temperature",Save=Fa
             if BandNum in ThermBands:
                 Refraster=1282.71/(arcpy.sa.Ln((666.09/Radraster)+1.0))
                 BandPath="{0}\\{1}_B{2}_Temperature.tif".format(OutputFolder,TileName,BandNum)
+                arcpy.AddMessage("Proceeded through if")
             #Otherwise calculate reflectance
             else:
                 Refraster=( math.pi * Radraster * dSun2) / (ESun[int(BandNum[0])-1] * math.cos(SZA*math.pi/180) )
                 BandPath="{0}\\{1}_B{2}_TOA_Reflectance.tif".format(OutputFolder,TileName,BandNum)
+                arcpy.AddMessage("Proceeded through else")
 
             if Save==True:
                 Refraster.save(BandPath)
