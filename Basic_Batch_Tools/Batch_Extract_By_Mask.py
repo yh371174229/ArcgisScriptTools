@@ -7,17 +7,15 @@ else:
     arcpy.AddError("You do not have the Spatial Analyst Extension, and therefore cannot use this tool.")
     
 #Input folder.
-folder= raw_input("Please enter the folder name and path where the data is located: ")
-folder_path= r"%s" %folder
+folder_path= arcpy.GetParameterAsText(0)
 arcpy.env.workspace= folder_path
 
 #Masking file.
-Mask= raw_input("Please enter the shapefile name that will be used to mask the data: ")
-Mask_file= "%s" %Mask
+Mask_file= arcpy.GetParameterAsText(1)
 
 #For all the rasters in the file, perform an extract by mask.
 for rasters in arcpy.ListRasters():
-    print rasters
+    arcpy.AddMessage(rasters)
     #Out name is the Output File name. EBM stands for "Extract By Mask".
     Out_Name= "EBM_" + rasters
     outExtractByMask = ExtractByMask(rasters, Mask_file)
