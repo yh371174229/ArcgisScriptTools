@@ -13,3 +13,7 @@ Numpy - http://sourceforge.net/projects/numpy/files/NumPy/1.7.1/
 Scipy - http://sourceforge.net/projects/scipy/files/scipy/0.12.0/
 
 H5py  - http://code.google.com/p/h5py/downloads/list
+
+If you find yourself having trouble installing these modules, or would like to find more modules, try this website: 
+http://www.lfd.uci.edu/~gohlke/pythonlibs/
+These are simplified module installation files.
