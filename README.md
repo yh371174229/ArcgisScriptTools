@@ -19,7 +19,7 @@ To begin, install the following requirements:
 
 To use the toolboxes, download the files as a zipped folder. Unzip and navigate to the folder in ArcCatalog. The toolbox should appear and instructions for each tool will be available in the tool's help section.
 
-If you find yourself having trouble installing these modules, or would like to find more modules, [try this website](http://www.lfd.uci.edu/~gohlke/pythonlibs/): 
+If you find yourself having trouble installing these modules, or would like to find more modules, [try this website](http://www.lfd.uci.edu/~gohlke/pythonlibs/).
 These are simplified module installation files.
 
 Notes
