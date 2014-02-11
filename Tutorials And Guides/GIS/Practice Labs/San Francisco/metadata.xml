@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Space, Culture and Urban Policy Project</origin>
+				<pubdate>19 September 2003</pubdate>
+				<title>San Francisco City and County Data</title>
+				<geoform>vector digital data</geoform>
+				<onlink>\\prisrv\pri files\PROJECTS\NSF Modules\to export 9_19_03\GIS Boundary Files\sfbay_tract_2000.shp</onlink>
+				<lworkcit>
+					<citeinfo>
+						<origin>Richard LeGates, JD and MCP, and Ayse Pamuk, PhD</origin>
+						<pubdate>2003</pubdate>
+						<title>Space, Culture and Urban Policy: Integrating GIS into Social Science Research Methods Courses</title>
+						<othercit>Funding for this work was provided by the National Science Foundation's Course, Curriculum, and Laboratory Improvement Program under grant DUE-0228878.</othercit>
+					</citeinfo>
+				</lworkcit>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>Directory containing Census 2000 TIGER/Line shapefiles of census tracts, block groups and blocsk in San Francisco City and County PLUS appended SF3 2000 variables. Shapefile of SF City Planning Districts.  Shapefile of SF City Redevelopment Agency Projects.</abstract>
+			<purpose>GIS feature files for use in a social science research methods course exercise</purpose>
+			<supplinf>Created for Space Culture and Urban Policy: Integrating GIS into Social Science Research Methods courses, San Francisco State University</supplinf>
+			<langdata>English</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>2003</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>publication date</current>
+		</timeperd>
+		<status>
+			<progress>In work</progress>
+			<update>As needed</update>
+		</status>
+		<spdom>
+			<bounding>
+			</bounding>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>none</themekt>
+				<themekey>census tracts</themekey>
+				<themekey>TIGER</themekey>
+				<themekey>block groups</themekey><themekey>blocks</themekey></theme>
+			<place>
+				<placekey>San Francisco County, CA</placekey>
+			</place>
+			<temporal>
+				<tempkey>2000</tempkey>
+			</temporal>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>None</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Space, Culture and Urban Policy Project</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>Prof. Ayse Pamuk</address>
+					<address>College of Behavioral and Social Sciences</address>
+					<address>San Francisco State University</address>
+					<address>1600 Holloway Avenue</address>
+					<city>San Francisco</city>
+					<state>CA</state>
+					<postal>94132</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>Prof. Richard LeGates</address>
+					<address>College of Behavioral and Social Sciences</address>
+					<address>San Francisco State University</address>
+					<address>1600 Holloway Avenue</address>
+					<city>San Francisco</city>
+					<state>CA</state>
+					<postal>94132</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>Pamuk: (415) 338-7045</cntvoice>
+				<cntvoice>LeGates: (415) 338-2875</cntvoice>
+				<cntemail>Pamuk: pamuk@sfsu.edu</cntemail>
+				<cntemail>LeGates: dlegates@sfsu.edu</cntemail>
+			</cntinfo>
+		</ptcontac>
+		<browse>
+		</browse>
+		<native>Microsoft Windows 2000 Version 5.0 (Build 2195) Service Pack 4; ESRI ArcCatalog 8.3.0.800</native>
+		<crossref>
+			<citeinfo>
+				<title>SF 2000 Census Tracts</title>
+			</citeinfo>
+		</crossref>
+	</idinfo>
+	<dataqual>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>ESRI ArcData Online</origin>
+						<pubdate>2000</pubdate>
+						<title>Census 2000 TIGER/Line Data</title>
+						<onlink>http://arcdata.esri.com</onlink>
+						<lworkcit>
+							<citeinfo>
+								<origin>US Census Bureau</origin>
+								<pubdate>2000</pubdate>
+								<title>Census 2000 TIGER/Line Data</title>
+								<onlink>http://www.census.gov</onlink>
+							</citeinfo>
+						</lworkcit>
+					</citeinfo>
+				</srccite>
+				<typesrc>online</typesrc>
+			</srcinfo>
+			<procstep>
+				<procdesc>Census 2000 TIGER/Line census tract datafiles downloaded by country by state from ESRI ArcData Online &lt;http://arcdata.esri.com&gt;.</procdesc>
+				<procdate>Unknown</procdate>
+			</procstep>
+			<procstep>
+				<procdesc>County census tract shapefiles merged and exported as single MSA tract-level shapefile.</procdesc>
+				<procdate>Unknown</procdate>
+			</procstep>
+			<procstep>
+				<procdesc>Created a shoreline. Erased shoreline, using TIGER water file as overlay, selecting only major shorelines (no interior hydrology).</procdesc>
+				<procdate>20 September 2003</procdate>
+				<proccont>
+					<cntinfo>
+						<cntperp>
+							<cntper>Monique Nakagawa</cntper>
+							<cntorg>Public Research Institute, SFSU</cntorg>
+						</cntperp>
+						<cntpos>Research Associate/GIS Analyst</cntpos>
+						<cntvoice>(415) 338-2932</cntvoice>
+						<cntemail>mayanak@sfsu.edu</cntemail>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Dataset copied.</procdesc>
+				<srcused>E:\NSF Modules\Databases\Census\msa shapefiles\sf_bay_area_tract_2000</srcused>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>C:\WINNT\Profiles\lisel\LOCALS~1\Temp\xml18A.tmp</srcused>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>F:\PROJECTS\NSF Modules\Lisel\September 18\exercise_1c\Exercise 1\SF_BayArea_data\sf_bay_area_tract_2000X1.shp.xml</srcused>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">C:\WINNT\Profiles\lisel\LOCALS~1\Temp\xmlCA.tmp</srcused><date Sync="TRUE">20030926</date><time Sync="TRUE">23354900</time></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Vector</direct>
+		<ptvctinf>
+			<sdtsterm>
+				<sdtstype>G-polygon</sdtstype>
+				<ptvctcnt>176</ptvctcnt>
+			</sdtsterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<geograph>
+				<latres>0.000000</latres>
+				<longres>0.000000</longres>
+				<geogunit>Decimal degrees</geogunit>
+			</geograph>
+			<geodetic>
+				<horizdn>North American Datum of 1927</horizdn>
+				<ellips>Clarke 1866</ellips>
+				<semiaxis>6378206.400000</semiaxis>
+				<denflat>294.978698</denflat>
+			</geodetic>
+		</horizsys>
+	</spref>
+	<eainfo>
+		<detailed>
+			<enttyp>
+				<enttypl>San Francisco City and County Data</enttypl>
+				<enttypd>San Francisco City and County Data + SF3 data</enttypd>
+				<enttypds>US Census &amp; ESRI</enttypds>
+			</enttyp>
+		</detailed>
+		<overview></overview>
+	</eainfo>
+	<distinfo>
+		<resdesc>Downloadable Data</resdesc>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize>2.413</transize>
+				</digtinfo>
+			</digform>
+		</stdorder>
+	</distinfo>
+	<metainfo>
+		<metd>20030926</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Space, Culture and Urban Policy Project</cntorg>
+					<cntper>Lisel Blash</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>Urban Studies Program</address>
+					<address>College of Behavioral and Social Sciences</address>
+					<address>San Francisco State University</address>
+					<address>1600 Holloway Avenue</address>
+					<city>San Francisco</city>
+					<state>CA</state>
+					<postal>94132</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>Pamuk: (415) 338-7045</cntvoice>
+				<cntvoice>LeGates: (415) 338-2875</cntvoice>
+				<cntemail>Pamuk: pamuk@sfsu.edu</cntemail>
+				<cntemail>LeGates: dlegates@sfsu.edu</cntemail>
+				<cntinst>Ayse Pamuk and Richard LeGates, co-Principal Investigators</cntinst>
+			</cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+	</metainfo>
+	<Esri><MetaID>{3FD82A0C-214B-4448-9E52-B6055FA7281B}</MetaID><CreaDate>20030926</CreaDate><CreaTime>23354900</CreaTime><SyncOnce>TRUE</SyncOnce><ModDate>20030929</ModDate><ModTime>00524200</ModTime></Esri><mdDateSt Sync="TRUE">20030929</mdDateSt></metadata>
