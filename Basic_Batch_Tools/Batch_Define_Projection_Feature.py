@@ -13,7 +13,7 @@ arcpy.env.workspace= folder_path
 #Desired Projection
 prjfile= arcpy.GetParameterAsText(1)
 
-#Apply projection to all datasets.
+#Define projection to all datasets.
 for shps in arcpy.ListFeatureClasses():
     arcpy.AddMessage(shps)
     arcpy.DefineProjection_management(shps, prjfile)

@@ -16,7 +16,7 @@ prjfile= arcpy.GetParameterAsText(1)
 #Resampling Type
 Resample= arcpy.GetParameterAsText(2)
 
-#Apply projection to all datasets.
+#For all the rasters in the input folder, change the projection.
 for rasters in arcpy.ListRasters():
     arcpy.AddMessage(rasters)
     Out_Name= "Prj_" + rasters[0:-4] + ".tif"

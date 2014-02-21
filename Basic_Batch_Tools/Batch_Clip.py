@@ -13,7 +13,7 @@ arcpy.env.workspace= folder_path
 #Clipping file.
 Clip_file= arcpy.GetParameterAsText(1)
 
-#For all the rasters in the file, perform an extract by mask.
+#For all the shapefiles in the input folder, perform a clip.
 for shps in arcpy.ListFeatureClasses():
     if shps != Clip_file:
         arcpy.AddMessage(shps)

@@ -13,7 +13,7 @@ arcpy.env.workspace= folder_path
 #Desired Projection
 prjfile= arcpy.GetParameterAsText(1)
 
-#Apply projection to all datasets.
+#Define projection to all datasets.
 for rasters in arcpy.ListRasters():
     arcpy.AddMessage(rasters)
     arcpy.DefineProjection_management(rasters, prjfile)
