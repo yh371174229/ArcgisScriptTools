@@ -13,7 +13,7 @@ arcpy.env.workspace= folder_path
 #Output coordinate system.
 OutSys= arcpy.GetParameterAsText(1)
 
-#For all the rasters in the file, perform an extract by mask.
+#For all the shapefiles in the input folder, alter the projection.
 for shps in arcpy.ListFeatureClasses():
     arcpy.AddMessage(shps)
     #Out name is the Output File name.
