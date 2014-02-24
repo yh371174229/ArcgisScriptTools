@@ -2,6 +2,7 @@
 #Name: DBF to CSV Conversion
 #Purpose: Convert DBF files into CSV's to enable merging and other processes
 #Notes: Utilizes dbfpy module, download here - http://dbfpy.sourceforge.net/
+        Fill in text where denoted by all Caps 
 #Created: 02/24/2014
 #############################################
 import csv, arcpy, sys, os
@@ -10,9 +11,9 @@ from arcpy import env
 from arcpy.sa import *
 
 
-arcpy.env.workspace = "~~~~INSERT PATH TO DBF FOLDER~~~~"
+arcpy.env.workspace = "INSERT PATH TO DBF FOLDER"
 arcpy.env.overwriteOutput = True
-path = "~~~~INSERT PATH TO DBF FOLDER~~~~"
+path = "INSERT PATH TO DBF FOLDER"
 
 
 DBFfiles = arcpy.ListFiles("*.dbf")
