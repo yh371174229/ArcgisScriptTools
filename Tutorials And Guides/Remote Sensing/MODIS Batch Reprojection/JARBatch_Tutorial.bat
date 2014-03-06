@@ -1,0 +1,1 @@
+java -jar MRTBatch.jar -d C:\Users\filepathtoHDFfolder -p C:\Users\filepathtoParameterFile.prm & mrtbatch.bat
